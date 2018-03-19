@@ -13,6 +13,11 @@ manifests:
       variant: v8
       os: linux
   -
+    image: jaymoulin/google-music-uploader:$VERSION-arm64v8
+    platform:
+      architecture: arm64
+      os: linux
+  -
     image: jaymoulin/google-music-uploader:$VERSION-amd64
     platform:
       architecture: amd64
