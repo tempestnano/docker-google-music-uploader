@@ -1,7 +1,7 @@
 VERSION ?= 1.1.0
 CACHE ?= --no-cache=1
 FULLVERSION ?= 1.1.0
-archs = s390x amd64 i386 arm64v8 arm32v6
+archs ?= s390x amd64 i386 arm64v8 arm32v6
 
 .PHONY: all build publish latest
 all: build publish latest
@@ -24,3 +24,4 @@ publish:
 	manifest-tool push from-spec manifest.yaml
 latest: build
 	FULLVERSION=latest VERSION=${VERSION} make publish
+
