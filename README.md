@@ -3,7 +3,6 @@
 Google Music Uploader - Docker Image
 ====================================
 
-[![latest release](https://img.shields.io/github/release/jaymoulin/docker-google-music-uploader.svg "latest release")](http://github.com/jaymoulin/docker-google-music-uploader/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/jaymoulin/google-music-uploader.svg)](https://hub.docker.com/r/jaymoulin/google-music-uploader/)
 [![Docker stars](https://img.shields.io/docker/stars/jaymoulin/google-music-uploader.svg)](https://hub.docker.com/r/jaymoulin/google-music-uploader/)
 [![Bitcoin donation](https://github.com/jaymoulin/jaymoulin.github.io/raw/master/btc.png "Bitcoin donation")](https://m.freewallet.org/id/374ad82e/btc)
