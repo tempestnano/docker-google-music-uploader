@@ -14,7 +14,7 @@ qemu-s390x-static:
 build: qemu-arm-static qemu-aarch64-static qemu-s390x-static
 	$(foreach arch,$(archs), \
 		cat Dockerfile | sed "s/FROM python:alpine/FROM ${arch}\/python:alpine/g" > .Dockerfile; \
-		docker build -t jaymoulin/google-music-uploader:${VERSION}-$(arch) -f .Dockerfile ${CACHE} .;\
+		docker build -t jaymoulin/google-music-uploader:${VERSION}-$(arch) -f .Dockerfile --build-arg VERSION=${VERSION} ${CACHE} .;\
 	)
 publish:
 	docker push jaymoulin/google-music-uploader

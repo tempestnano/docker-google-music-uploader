@@ -4,7 +4,10 @@ COPY qemu-*-static /usr/bin/
 
 FROM builder
 
+ARG VERSION=1.1.0
+
 LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <https://twitter.com/MoulinJay>"
+LABEL version=${VERSION}
 
 ENV REMOVE=0
 ENV ONESHOT=0
