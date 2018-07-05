@@ -1,6 +1,6 @@
-VERSION ?= 1.2.0
+VERSION ?= 1.2.1
 CACHE ?= --no-cache=1
-FULLVERSION ?= 1.2.0
+FULLVERSION ?= 1.2.1
 archs ?= s390x amd64 i386 arm64v8 arm32v6
 
 .PHONY: all build publish latest
