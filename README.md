@@ -34,12 +34,25 @@ These environment variable will produce a different behaviour
 * `ONESHOT` : Execute only once without listening to folder events (boolean, (default: false)) - pass to true if you want to execute only once (also remove `--restart=always` from docker parameters) 
 * `UPLOADER_ID` : Identity of your uploader, must be your MAC address in uppercase 
     (default: false, which means your actual MAC address) - Change this value only if you know what you are doing and had `MAX_PER_MACHINE_USERS_EXCEEDED` error
+* `DEDUP_API` : Url to the deduplicate API (string (default: None)) - Will call deduplicate API before trying to sample and upload to Google Music
 
 ### Example
 ```
-docker run -d --restart=always -v /path/to/your/library:/media/library --name googlemusic -e REMOVE=false jaymoulin/google-music-uploader
+docker run -d --restart=always -v /path/to/your/library:/media/library --name googlemusic -e REMOVE=true jaymoulin/google-music-uploader
 ```
-will not delete files on upload
+will delete files on upload
+
+Deduplicate
+-----------
+
+You can (un)mark files as duplicate thanks to the deduplicate API included.
+For example, if you already know all your library was already uploaded to Google Music, you can mark all files as already uploaded in the deduplicate api.
+
+```
+docker exec googlemusic google-music-manager-deduplicate http://172.17.0.1 -d /media/library
+```
+
+Consult [Google Music Manager Uploader Deduplicate](https://github.com/jaymoulin/google-music-manager-uploader#deduplicate) for further informations.
 
 Configuration
 ---

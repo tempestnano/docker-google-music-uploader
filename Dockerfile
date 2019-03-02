@@ -12,6 +12,7 @@ LABEL version=${VERSION}
 ENV REMOVE=0
 ENV ONESHOT=0
 ENV UPLOADER_ID=false
+ENV DEDUP_API=
 
 RUN apk update && \
     apk add gcc g++ linux-headers libxml2-dev libxslt-dev --no-cache --virtual .build-deps && \
