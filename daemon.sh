@@ -20,7 +20,8 @@ else
         PARAMS="$PARAMS --uploader_id $UPLOADER_ID"
     fi
     if [ "$DEDUP_API" ]; then
-        PARAMS="$PARAMS -w $DEDUP_API"
+        PARAMS="$PARAMS -w $DEDUP_API"i
+    fi
     google-music-upload -d /media/library -a /root/oauth/oauth.key $PARAMS &
     PID=$!
     wait $PID
