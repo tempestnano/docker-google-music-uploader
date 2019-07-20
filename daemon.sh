@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -f /root/oauth/oauth.key ]; then
+if [[ ! -f /root/oauth/oauth.key ]]; then
     trap 'exit 0' TERM INT
     while :
     do
@@ -16,11 +16,14 @@ else
     if [[ "$ONESHOT" == "1" ]] || [[ "$ONESHOT" == "True" ]] || [[ "$ONESHOT" == "true" ]] || [[ "$ONESHOT" == "TRUE" ]]; then
         PARAMS="$PARAMS -o"
     fi
-    if [ "$UPLOADER_ID" ]; then
+    if [[ "$UPLOADER_ID" ]]; then
         PARAMS="$PARAMS --uploader_id $UPLOADER_ID"
     fi
-    if [ "$DEDUP_API" ]; then
+    if [[ "$DEDUP_API" ]]; then
         PARAMS="$PARAMS -w $DEDUP_API"i
+    fi
+    if [[ "$LOGIN" ]] && [[ "$PASSWORD" ]]; then
+        PARAMS="$PARAMS --login \"$LOGIN\" --password \"$PASSWORD\""
     fi
     google-music-upload -d /media/library -a /root/oauth/oauth.key $PARAMS &
     PID=$!

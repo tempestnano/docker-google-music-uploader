@@ -35,6 +35,8 @@ These environment variable will produce a different behaviour
 * `UPLOADER_ID` : Identity of your uploader, must be your MAC address in uppercase 
     (default: false, which means your actual MAC address) - Change this value only if you know what you are doing and had `MAX_PER_MACHINE_USERS_EXCEEDED` error
 * `DEDUP_API` : Url to the deduplicate API (string (default: None)) - Will call deduplicate API before trying to sample and upload to Google Music
+* `LOGIN` : Login (for cover art uploading) (string (default: None)) - Login of your Google Music account for cover art uploading
+* `PASSWORD` : Password (for cover art uploading) (string (default: None)) - Password of your Google Music account for cover art uploading
 
 ### Example
 ```
