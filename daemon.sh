@@ -22,9 +22,6 @@ else
     if [[ "$DEDUP_API" ]]; then
         PARAMS="$PARAMS -w $DEDUP_API"i
     fi
-    if [[ "$LOGIN" ]] && [[ "$PASSWORD" ]]; then
-        PARAMS="$PARAMS --login \"$LOGIN\" --password \"$PASSWORD\""
-    fi
     google-music-upload -d /media/library -a /root/oauth/oauth.key $PARAMS &
     PID=$!
     wait $PID

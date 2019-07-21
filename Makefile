@@ -1,6 +1,6 @@
-VERSION ?= 1.5.1
+VERSION ?= 1.5.2
 CACHE ?= --no-cache=1
-FULLVERSION ?= 1.5.1
+FULLVERSION ?= 1.5.2
 archs ?= amd64 i386 arm64v8 arm32v6
 
 .PHONY: all build publish latest
