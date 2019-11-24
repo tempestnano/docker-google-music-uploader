@@ -51,7 +51,7 @@ You can (un)mark files as duplicate thanks to the deduplicate API included.
 For example, if you already know all your library was already uploaded to Google Music, you can mark all files as already uploaded in the deduplicate api.
 
 ```
-docker exec googlemusic google-music-manager-deduplicate http://172.17.0.1 -d /media/library
+docker exec googlemusic google-music-upload-deduplicate --deduplicate_api http://172.17.0.1 -d /media/library
 ```
 
 Consult [Google Music Manager Uploader Deduplicate](https://github.com/jaymoulin/google-music-manager-uploader#deduplicate) for further informations.
