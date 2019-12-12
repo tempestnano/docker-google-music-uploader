@@ -1,19 +1,19 @@
 image: jstrader/google-music-uploader:latest
 manifests:
   -
-    image: jstrader/google-music-uploader:$VERSION-arm32v7
+    image: jstrader/google-music-uploader:arm32v7
     platform:
       architecture: arm
       variant: v7
       os: linux
   -
-    image: jstrader/google-music-uploader:$VERSION-arm64v8
+    image: jstrader/google-music-uploader:arm64v8
     platform:
       architecture: arm64
       os: linux
       variant: v8
   -
-    image: jstrader/google-music-uploader:$VERSION-amd64
+    image: jstrader/google-music-uploader:amd64
     platform:
       architecture: amd64
       os: linux
