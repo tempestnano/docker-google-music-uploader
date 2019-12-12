@@ -1,12 +1,9 @@
 FROM python:alpine3.10 as builder
 
-COPY qemu-*-static /usr/bin/
-
 FROM builder
 
 ARG VERSION=1.5.7
 
-LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <https://twitter.com/MoulinJay>"
 LABEL version=${VERSION}
 
 ENV REMOVE=0
