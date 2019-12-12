@@ -12,10 +12,10 @@ qemu-aarch64-static:
 build: qemu-arm-static qemu-aarch64-static
 	$(foreach arch,$(archs), \
 		cat Dockerfile | sed "s/FROM python:alpine/FROM ${arch}\/python:alpine/g" > .Dockerfile; \
-		docker build -t jaymoulin/google-music-uploader:${VERSION}-$(arch) -f .Dockerfile --build-arg VERSION=${VERSION} ${CACHE} .;\
+		docker build -t jstrader/google-music-uploader:${VERSION}-$(arch) -f .Dockerfile --build-arg VERSION=${VERSION} ${CACHE} .;\
 	)
 publish:
-	docker push jaymoulin/google-music-uploader
+	docker push jstrader/google-music-uploader
 	cat manifest.yml | sed "s/\$$VERSION/${VERSION}/g" > manifest.yaml
 	cat manifest.yaml | sed "s/\$$FULLVERSION/${FULLVERSION}/g" > manifest2.yaml
 	mv manifest2.yaml manifest.yaml

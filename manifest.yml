@@ -1,23 +1,19 @@
-image: jaymoulin/google-music-uploader:$FULLVERSION
+image: jstrader/google-music-uploader:latest
 manifests:
   -
-    image: jaymoulin/google-music-uploader:$VERSION-arm32v6
+    image: jstrader/google-music-uploader:$VERSION-arm32v7
     platform:
       architecture: arm
-      variant: v6
+      variant: v7
       os: linux
   -
-    image: jaymoulin/google-music-uploader:$VERSION-arm64v8
+    image: jstrader/google-music-uploader:$VERSION-arm64v8
     platform:
       architecture: arm64
       os: linux
+      variant: v8
   -
-    image: jaymoulin/google-music-uploader:$VERSION-amd64
+    image: jstrader/google-music-uploader:$VERSION-amd64
     platform:
       architecture: amd64
-      os: linux
-  -
-    image: jaymoulin/google-music-uploader:$VERSION-i386
-    platform:
-      architecture: 386
       os: linux

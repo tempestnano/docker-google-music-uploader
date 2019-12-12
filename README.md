@@ -3,23 +3,23 @@
 Google Music Uploader - Docker Image
 ====================================
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/jaymoulin/google-music-uploader.svg)](https://hub.docker.com/r/jaymoulin/google-music-uploader/)
-[![Docker stars](https://img.shields.io/docker/stars/jaymoulin/google-music-uploader.svg)](https://hub.docker.com/r/jaymoulin/google-music-uploader/)
-[![Bitcoin donation](https://github.com/jaymoulin/jaymoulin.github.io/raw/master/btc.png "Bitcoin donation")](https://m.freewallet.org/id/374ad82e/btc)
-[![Litecoin donation](https://github.com/jaymoulin/jaymoulin.github.io/raw/master/ltc.png "Litecoin donation")](https://m.freewallet.org/id/374ad82e/ltc)
-[![Watch Ads](https://github.com/jaymoulin/jaymoulin.github.io/raw/master/utip.png "Watch Ads")](https://utip.io/femtopixel)
-[![PayPal donation](https://github.com/jaymoulin/jaymoulin.github.io/raw/master/ppl.png "PayPal donation")](https://www.paypal.me/jaymoulin)
+[![Docker Pulls](https://img.shields.io/docker/pulls/jstrader/google-music-uploader.svg)](https://hub.docker.com/r/jstrader/google-music-uploader/)
+[![Docker stars](https://img.shields.io/docker/stars/jstrader/google-music-uploader.svg)](https://hub.docker.com/r/jstrader/google-music-uploader/)
+[![Bitcoin donation](https://github.com/jstrader/jstrader.github.io/raw/master/btc.png "Bitcoin donation")](https://m.freewallet.org/id/374ad82e/btc)
+[![Litecoin donation](https://github.com/jstrader/jstrader.github.io/raw/master/ltc.png "Litecoin donation")](https://m.freewallet.org/id/374ad82e/ltc)
+[![Watch Ads](https://github.com/jstrader/jstrader.github.io/raw/master/utip.png "Watch Ads")](https://utip.io/femtopixel)
+[![PayPal donation](https://github.com/jstrader/jstrader.github.io/raw/master/ppl.png "PayPal donation")](https://www.paypal.me/jstrader)
 [![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png "Buy me a coffee")](https://www.buymeacoffee.com/3Yu8ajd7W)
 [![Become a Patron](https://badgen.net/badge/become/a%20patron/F96854 "Become a Patron")](https://patreon.com/femtopixel)
 
 This image allows you to watch a folder and upload all new MP3 added to your Google Music Library.
-This image is based on [Google MusicManager](https://github.com/jaymoulin/google-music-manager)
+This image is based on [Google MusicManager](https://github.com/jstrader/google-music-manager)
 
 Installation
 ---
 
 ```
-docker run -d --restart=always -v /path/to/your/library:/media/library --name googlemusic jaymoulin/google-music-uploader
+docker run -d --restart=always -v /path/to/your/library:/media/library --name googlemusic jstrader/google-music-uploader
 ```
 
 You must define your path to your library in a volume to `/media/library`
@@ -42,7 +42,7 @@ These environment variable will produce a different behaviour
 
 ### Example
 ```
-docker run -d --restart=always -v /path/to/your/library:/media/library --name googlemusic -e REMOVE=true jaymoulin/google-music-uploader
+docker run -d --restart=always -v /path/to/your/library:/media/library --name googlemusic -e REMOVE=true jstrader/google-music-uploader
 ```
 will delete files on upload
 
@@ -56,7 +56,7 @@ For example, if you already know all your library was already uploaded to Google
 docker exec googlemusic google-music-upload-deduplicate --deduplicate_api http://172.17.0.1 -d /media/library
 ```
 
-Consult [Google Music Manager Uploader Deduplicate](https://github.com/jaymoulin/google-music-manager-uploader#deduplicate) for further informations.
+Consult [Google Music Manager Uploader Deduplicate](https://github.com/jstrader/google-music-manager-uploader#deduplicate) for further informations.
 
 Configuration
 ---
@@ -87,7 +87,7 @@ Appendixes
 If you don't have Docker installed yet, you can do it easily in one line using this command
  
 ```
-curl -sSL "https://gist.githubusercontent.com/jaymoulin/e749a189511cd965f45919f2f99e45f3/raw/0e650b38fde684c4ac534b254099d6d5543375f1/ARM%2520(Raspberry%2520PI)%2520Docker%2520Install" | sudo sh && sudo usermod -aG docker $USER
+curl -sSL "https://gist.githubusercontent.com/jstrader/e749a189511cd965f45919f2f99e45f3/raw/0e650b38fde684c4ac534b254099d6d5543375f1/ARM%2520(Raspberry%2520PI)%2520Docker%2520Install" | sudo sh && sudo usermod -aG docker $USER
 ```
 
 
