@@ -5,7 +5,7 @@ FROM alpine AS builder
 ENV QEMU_URL https://github.com/balena-io/qemu/releases/download/v4.0.0-balena/qemu-4.0.0-balena-aarch64.tar.gz
 RUN apk add curl && curl -L ${QEMU_URL} | tar zxvf - -C . --strip-components 1
 
-FROM arm64v8/python:rc-alpine
+FROM arm64v8/python:3.9-rc-alpine
 
 # Add QEMU
 COPY --from=builder qemu-aarch64-static /usr/bin
