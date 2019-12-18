@@ -5,7 +5,7 @@ FROM alpine AS builder
 ENV QEMU_URL https://github.com/balena-io/qemu/releases/download/v4.0.0-balena/qemu-4.0.0-balena-aarch64.tar.gz
 RUN apk add curl && curl -L ${QEMU_URL} | tar zxvf - -C . --strip-components 1
 
-FROM arm64v8/python:3.9-rc-alpine
+FROM arm64v8/python:alpine
 
 # Add QEMU
 COPY --from=builder qemu-aarch64-static /usr/bin
@@ -22,9 +22,9 @@ ENV DEDUP_API=
 
 RUN apk update && \
     apk add gcc g++ linux-headers libxml2-dev libxslt-dev --no-cache --virtual .build-deps && \
-    apk add ffmpeg && mkdir /root/oauth/ && \
-    pip3 install --upgrade pip && \
-    pip3 install google-music-manager-uploader && \
+    apk add ffmpeg --no-cache && mkdir /root/oauth/ && \
+    pip3 install --no-cache-dir --upgrade pip && \
+    pip3 install --no-cache-dir google-music-manager-uploader && \
     apk del gcc --purge .build-deps
 
 COPY ./daemon.sh /root/daemon

@@ -1,4 +1,4 @@
-FROM python:alpine3.10 as builder
+FROM python:alpine as builder
 
 FROM builder
 
@@ -13,9 +13,9 @@ ENV DEDUP_API=
 
 RUN apk update && \
     apk add gcc g++ linux-headers libxml2-dev libxslt-dev --no-cache --virtual .build-deps && \
-    apk add ffmpeg && mkdir /root/oauth/ && \
-    pip3 install --upgrade pip && \
-    pip3 install google-music-manager-uploader && \
+    apk add ffmpeg --no-cache && mkdir /root/oauth/ && \
+    pip3 install --no-cache-dir --upgrade pip && \
+    pip3 install --no-cache-dir google-music-manager-uploader && \
     apk del gcc --purge .build-deps
 
 COPY ./daemon.sh /root/daemon
